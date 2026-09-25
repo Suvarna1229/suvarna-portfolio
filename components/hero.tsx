@@ -1,11 +1,14 @@
-'use client'
-
 import Image from 'next/image'
-import { ArrowUpRight, FileText } from 'lucide-react'
+import { ArrowUpRight, Mail } from 'lucide-react'
 import { personal } from '@/lib/portfolio-data'
 import { GithubIcon, LinkedinIcon, LeetcodeIcon } from '@/components/brand-icons'
 
 const socialLinks = [
+  {
+    label: 'Email',
+    href: `mailto:${personal.email}`,
+    Icon: Mail,
+  },
   {
     label: 'LinkedIn',
     href: personal.socials.linkedin,
@@ -38,29 +41,21 @@ export function Hero() {
 
       <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-5 lg:grid-cols-[1.15fr_0.85fr] lg:gap-8 lg:px-8">
         <div className="order-2 text-center lg:order-1 lg:text-left">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-muted-foreground backdrop-blur">
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
-            </span>
-            Open to software engineering opportunities
-          </span>
-
-          <p className="mt-6 font-mono text-sm text-primary sm:text-base">
-            Hi, I&apos;m Suvarna Kukkala
-          </p>
-
-          <h1 className="mt-3 font-display text-4xl font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl">
-            <span className="bg-gradient-to-r from-primary via-violet-400 to-accent bg-clip-text text-transparent">
-              Aspiring Software Engineer
-            </span>
+          <h1 className="font-display text-5xl font-bold tracking-tight text-balance text-foreground sm:text-6xl lg:text-7xl">
+            {personal.name}
           </h1>
 
-          <p className="mt-5 text-lg font-medium text-foreground/90 sm:text-xl">
-            Final-Year Computer Science &amp; Engineering Student
+          <p className="mt-4 font-display text-2xl font-semibold sm:text-3xl lg:text-4xl">
+            <span className="bg-gradient-to-r from-primary via-violet-400 to-accent bg-clip-text text-transparent">
+              {personal.role}
+            </span>
           </p>
 
-          <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground lg:mx-0">
+          <p className="mt-5 text-lg font-medium text-foreground/90 sm:text-xl">
+            {personal.tagline}
+          </p>
+
+          <p className="mx-auto mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
             {personal.intro}
           </p>
 
@@ -78,19 +73,6 @@ export function Hero() {
             >
               Contact Me
             </a>
-            <a
-              href="#"
-              aria-disabled="true"
-              title="Resume coming soon"
-              onClick={(e) => e.preventDefault()}
-              className="inline-flex w-full cursor-not-allowed items-center justify-center gap-2 rounded-full border border-dashed border-white/20 px-6 py-3 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground sm:w-auto"
-            >
-              <FileText className="size-4" aria-hidden="true" />
-              Resume
-              <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide">
-                Soon
-              </span>
-            </a>
           </div>
 
           <div className="mt-8 flex items-center justify-center gap-3 lg:justify-start">
@@ -98,8 +80,8 @@ export function Hero() {
               <a
                 key={label}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={href.startsWith('mailto:') ? undefined : '_blank'}
+                rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                 aria-label={label}
                 className="group inline-flex size-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-foreground"
               >
@@ -117,14 +99,14 @@ export function Hero() {
             />
             <div className="relative rounded-full bg-gradient-to-tr from-primary via-violet-500 to-accent p-[3px] shadow-2xl shadow-primary/20">
               <div className="rounded-full bg-background p-2">
-                <div className="relative size-56 overflow-hidden rounded-full sm:size-72 lg:size-80">
+                <div className="relative size-60 overflow-hidden rounded-full sm:size-72 lg:size-96">
                   <Image
                     src="/profile.jpg"
                     alt="Portrait of Suvarna Kukkala"
                     fill
                     priority
-                    sizes="(max-width: 640px) 14rem, 20rem"
-                    className="object-cover"
+                    sizes="(max-width: 640px) 15rem, (max-width: 1024px) 18rem, 24rem"
+                    className="object-cover object-[50%_42%] scale-[1.9] origin-[50%_42%]"
                   />
                 </div>
               </div>

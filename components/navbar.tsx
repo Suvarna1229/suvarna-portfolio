@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Mail, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { navLinks, personal } from '@/lib/portfolio-data'
+import { navLinks } from '@/lib/portfolio-data'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -61,7 +61,7 @@ export function Navbar() {
           Kukkala
         </a>
 
-        <ul className="hidden items-center gap-1 xl:flex">
+        <ul className="hidden items-center gap-2 md:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -80,19 +80,11 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-2">
-          <a
-            href="#contact"
-            className="hidden items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:-translate-y-0.5 hover:bg-primary/90 sm:inline-flex"
-          >
-            <Mail className="size-4" aria-hidden="true" />
-            Contact Me
-          </a>
-
+        <div className="flex items-center gap-2 md:hidden">
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex size-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-foreground transition-colors hover:bg-white/10 xl:hidden"
+            className="inline-flex size-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-foreground transition-colors hover:bg-white/10"
             aria-label={open ? 'Close menu' : 'Open menu'}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -109,7 +101,7 @@ export function Navbar() {
       <div
         id="mobile-menu"
         className={cn(
-          'overflow-hidden border-t border-white/10 bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 xl:hidden',
+          'overflow-hidden border-t border-white/10 bg-background/95 backdrop-blur-xl transition-[max-height,opacity] duration-300 md:hidden',
           open ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0',
         )}
       >
@@ -130,16 +122,6 @@ export function Navbar() {
               </a>
             </li>
           ))}
-          <li className="mt-2">
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground"
-            >
-              <Mail className="size-4" aria-hidden="true" />
-              Contact Me
-            </a>
-          </li>
         </ul>
       </div>
     </header>

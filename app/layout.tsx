@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Suvarna Kukkala | Aspiring Software Engineer',
   description:
-    'Portfolio of Suvarna Kukkala, a final-year Computer Science and Engineering student interested in software engineering, Java, Python, DSA, web development, AI and machine learning.',
+    'Portfolio of Suvarna Kukkala, a Computer Science and Engineering student interested in software engineering, Java, Python, DSA, web development, AI and machine learning.',
   generator: 'v0.app',
   keywords: [
     'Suvarna Kukkala',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Suvarna Kukkala | Aspiring Software Engineer',
     description:
-      'Portfolio of Suvarna Kukkala, a final-year Computer Science and Engineering student interested in software engineering, Java, Python, DSA, web development, AI and machine learning.',
+      'Portfolio of Suvarna Kukkala, a Computer Science and Engineering student interested in software engineering, Java, Python, DSA, web development, AI and machine learning.',
     type: 'website',
   },
 }

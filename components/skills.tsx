@@ -21,13 +21,9 @@ const groupIcons: Record<string, typeof Code2> = {
 
 export function Skills() {
   return (
-    <section id="skills" className="relative py-20 sm:py-28">
+    <section id="skills" className="relative scroll-mt-20 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <SectionHeading
-          eyebrow="// skills"
-          title="Technologies I work with"
-          description="A snapshot of the tools and technologies I use and continue to learn."
-        />
+        <SectionHeading title="Technologies" />
 
         <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group, i) => {

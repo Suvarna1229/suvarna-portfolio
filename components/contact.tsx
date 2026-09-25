@@ -33,13 +33,9 @@ const channels = [
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-20 sm:py-28">
+    <section id="contact" className="relative scroll-mt-20 py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
-        <SectionHeading
-          eyebrow="// contact"
-          title="Let's connect"
-          description="I'm open to software engineering opportunities and always happy to connect. Reach out through any of the channels below."
-        />
+        <SectionHeading title="Contact Me" />
 
         <Reveal className="mt-14">
           <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-card/60 p-8 backdrop-blur sm:p-10">
