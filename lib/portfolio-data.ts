@@ -65,7 +65,7 @@ export const skillGroups = [
     items: ['Manual Testing', 'Test Cases', 'SDLC', 'Unit Testing'],
   },
   { title: 'Frontend', items: ['HTML', 'CSS', 'JavaScript', 'Tailwind CSS'] },
-  { title: 'Backend', items: ['Node.js'] },
+  { title: 'Backend', items: ['Node.js', 'Express.js', 'PHP'] },
   { title: 'Database', items: ['MySQL', 'SQL'] },
   {
     title: 'Tools & Technologies',
