@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ArrowUpRight, Mail } from 'lucide-react'
+import { ArrowUpRight, FileText, Mail } from 'lucide-react'
 import { personal } from '@/lib/portfolio-data'
 import { GithubIcon, LinkedinIcon, LeetcodeIcon } from '@/components/brand-icons'
 
@@ -66,6 +66,15 @@ export function Hero() {
             >
               View My Projects
               <ArrowUpRight className="size-4" aria-hidden="true" />
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-foreground backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/10 sm:w-auto"
+            >
+              <FileText className="size-4" aria-hidden="true" />
+              View Resume
             </a>
             <a
               href="#contact"
